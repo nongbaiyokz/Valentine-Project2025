@@ -1,4 +1,5 @@
 "use client";
+import ChangeTheme from "./ChangeTheme";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -20,16 +21,19 @@ const Navbar = () => {
                     Valentine
                 </Link>
             </div>
-            <div className="flex-none">
+            <div className="grid grid-flow-col grid-rows-1 gap-1">
                 <ul className="menu menu-horizontal px-1">
                     <li>
-                        <Link href="/about">About</Link>
+                        <Link href="/about" className="font-bold">HOME</Link>
                     </li>
                     <li>
-                        <Link href="/projects">Projects</Link>
+                    <Link href="/about" className="font-bold">IMAGE</Link>
                     </li>
                     <li>
-                        <Link href="/contact">Contact</Link>
+                    <Link href="/about" className="font-bold">ME</Link>
+                    </li>
+                    <li>
+                    <ChangeTheme />
                     </li>
                 </ul>
             </div>

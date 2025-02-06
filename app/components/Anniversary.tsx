@@ -36,7 +36,7 @@ export default function Anniversary() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center justify-center p-8"
         >
-            <h2 className="text-2xl font-bold text-primary mb-6">Our Anniversary</h2>
+            <h2 className="text-2xl font-bold text-primary mb-6">XXX Anniversary</h2>
             <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
                 <motion.div className="flex flex-col p-2 bg-base-200 border border-base-300 shadow-lg rounded-lg text-base-content">
                     <motion.span 
