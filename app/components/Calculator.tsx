@@ -12,7 +12,7 @@ const Calculator = () => {
         }
     };
     const handleEqualClick = () => {
-        var result = input;
+        const result = input;
         setInput(result.toString());
         if(result.toString() === "22112024"){
             alert("Happy Anniversary");
