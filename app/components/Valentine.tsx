@@ -42,8 +42,8 @@ const Valentine = () => {
                     className="max-w-sm"
                 >
                     
-                    <img
-                        src="https://media.discordapp.net/attachments/1283830529933840507/1336869766895505459/valentine.png?ex=67a5607e&is=67a40efe&hm=2fb5acf6b4e0fbfd075af94e43b9b98745dcb498b8c029779fd040273c8b1666&=&format=webp&quality=lossless&width=701&height=701"
+                    <Image
+                        src="/images/valentine.png"
                         width={500}
                         height={300}
                         className="max-w-sm rounded-lg shadow-2xl"
