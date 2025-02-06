@@ -1,8 +1,5 @@
 import { useState } from "react";
-
-import { useEffect } from "react";
-
-
+import { motion } from "framer-motion";
 const Calculator: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const [result, setResult] = useState<number | null>(null);
@@ -23,53 +20,13 @@ const Calculator: React.FC = () => {
       setResult(null);
     }
   };
-  
-
-const useInputAnimation = (input: string) => {
-    useEffect(() => {
-        const inputElement = document.querySelector("input");
-        if (inputElement) {
-            inputElement.classList.add("animate-input");
-            const timeout = setTimeout(() => {
-                inputElement.classList.remove("animate-input");
-            }, 300);
-            return () => clearTimeout(timeout);
-        }
-    }, [input]);
-};
-
-export default useInputAnimation;
 
   return (
-    // <div>
-    //     <h1>Calculator</h1>
-    //     <input type="text" value={input} readOnly style={{ width: '100%', marginBottom: '10px' }} />
-    //     <div>
-    //         <button className="btn btn-outline btn-primary" onClick={() => handleButtonClick('1')}>1</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('2')}>2</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('3')}>3</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('+')}>+</button>
-    //     </div>
-    //     <div>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('4')}>4</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('5')}>5</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('6')}>6</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('-')}>-</button>
-    //     </div>
-    //     <div>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('7')}>7</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('8')}>8</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('9')}>9</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('*')}>*</button>
-    //     </div>
-    //     <div>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('0')}>0</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={handleClear}>C</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={handleCalculate}>=</button>
-    //         <button className="btn btn-outline btn-primary"  onClick={() => handleButtonClick('/')}>/</button>
-    //     </div>
-    //     {result !== null && <div>Result: {result}</div>}
-    // </div>
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 2.5 }}
+>
     <div className="card w-96 bg-base-100 shadow-sm">
       <div className="card-body">
         <div className="flex justify-between">
@@ -84,19 +41,23 @@ export default useInputAnimation;
               className="size-6"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
+ 
+ 
 
             <input
               type="text"
               value={input}
               readOnly
-              className="grow"
+              className="grow animate-pulse"
               placeholder="Enter your password!"
             />
+            
+      
           </label>
         </ul>
         <div className="grid grid-cols-3 gap-4">
@@ -169,9 +130,9 @@ export default useInputAnimation;
             >
               <path d="M2 3a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2Z" />
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M2 7.5h16l-.811 7.71a2 2 0 0 1-1.99 1.79H4.802a2 2 0 0 1-1.99-1.79L2 7.5Zm5.22 1.72a.75.75 0 0 1 1.06 0L10 10.94l1.72-1.72a.75.75 0 1 1 1.06 1.06L11.06 12l1.72 1.72a.75.75 0 1 1-1.06 1.06L10 13.06l-1.72 1.72a.75.75 0 0 1-1.06-1.06L8.94 12l-1.72-1.72a.75.75 0 0 1 0-1.06Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
             Clear
@@ -187,9 +148,9 @@ export default useInputAnimation;
               className="size-4"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M15 8A7 7 0 1 0 1 8a7 7 0 0 0 14 0ZM4.75 7.25a.75.75 0 0 0 0 1.5h4.69L8.22 9.97a.75.75 0 1 0 1.06 1.06l2.5-2.5a.75.75 0 0 0 0-1.06l-2.5-2.5a.75.75 0 0 0-1.06 1.06l1.22 1.22H4.75Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
             Enter
@@ -197,7 +158,9 @@ export default useInputAnimation;
         </div>
         {result !== null && <div>Result: {result}</div>}
       </div>
+
     </div>
+    </motion.div>
   );
 };
 

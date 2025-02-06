@@ -7,10 +7,7 @@ export default function Home() {
   return (
    
    <div>
-    
       <Valentine />
-      <Calculator /> 
-      <Loading />
       
 
    </div>
