@@ -1,6 +1,7 @@
 'use client'
-import Calculator from "./components/Cal";
+import Calculator from "./components/Calpassword";
 import Valentine from "./components/Valentine";
+import Anniversary from "./components/Anniversary";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
    <div>
       <Valentine />
       <Calculator />
+      <Anniversary />
       
 
    </div>
