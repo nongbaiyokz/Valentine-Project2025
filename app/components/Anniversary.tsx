@@ -38,7 +38,7 @@ export default function Anniversary() {
         >
             <h2 className="text-2xl font-bold text-primary mb-6">Our Anniversary</h2>
             <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
-                <motion.div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                <motion.div className="flex flex-col p-2 bg-base-200 border border-base-300 shadow-lg rounded-lg text-base-content">
                     <motion.span 
                         key={timeLeft.days}
                         initial={{ y: 20, opacity: 0 }}
@@ -49,7 +49,7 @@ export default function Anniversary() {
                     </motion.span>
                     days
                 </motion.div>
-                <motion.div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                <motion.div className="flex flex-col p-2 bg-base-200 border border-base-300 shadow-lg rounded-lg text-base-content">
                     <motion.span 
                         key={timeLeft.hours}
                         initial={{ y: 20, opacity: 0 }}
@@ -60,7 +60,7 @@ export default function Anniversary() {
                     </motion.span>
                     hours
                 </motion.div>
-                <motion.div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                <motion.div className="flex flex-col p-2 bg-base-200 border border-base-300 shadow-lg rounded-lg text-base-content">
                     <motion.span 
                         key={timeLeft.minutes}
                         initial={{ y: 20, opacity: 0 }}
@@ -71,16 +71,16 @@ export default function Anniversary() {
                     </motion.span>
                     min
                 </motion.div>
-                <motion.div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                <motion.div className="flex flex-col p-2 bg-base-200 border border-base-300 shadow-lg rounded-lg text-base-content">
                     <motion.span 
                         key={timeLeft.seconds}
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        className="font-mono text-5xl"
+                        className="font-mono text-5xl countdown"
                     >
                         {timeLeft.seconds}
                     </motion.span>
-                    sec
+                    <span className="text-sm opacity-70">sec</span>
                 </motion.div>
             </div>
         </motion.div>

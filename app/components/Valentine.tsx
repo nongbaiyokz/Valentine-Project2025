@@ -7,7 +7,7 @@ const Valentine = () => {
     return (
         
         <div className="hero min-h-screen bg-base-200">
-            <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 10 }}>
+            {/* <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-10">
                 {[...Array(10)].map((_, i) => (
                 <motion.div
                     key={i}
@@ -28,17 +28,10 @@ const Valentine = () => {
                     delay: Math.random() * -20,
                     ease: 'linear'
                     }}
-                 style={{
-                        position: 'absolute',
-                        width: '120px',
-                        height: '120px',
-                        backgroundImage: 'url(/12.png)',
-                        backgroundSize: 'cover',
-                        pointerEvents: 'auto'
-                    }}
+                 className="absolute w-[120px] h-[120px] bg-[url('/12.png')] bg-cover pointer-events-auto"
                 />
                 ))}
-            </div>
+            </div> */}
             <div className="hero-content flex-col lg:flex-row">
 
                 <motion.div

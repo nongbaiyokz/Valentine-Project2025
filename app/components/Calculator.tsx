@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 
 const Calculator = () => {
@@ -11,9 +12,14 @@ const Calculator = () => {
         }
     };
     const handleEqualClick = () => {
-        let result = input;
-        setInput(result.toString());
+        var result = input;
         console.log(result);
+        setInput(result.toString());
+        if(result.toString() === "22112024"){
+            alert("Happy Anniversary");
+        }else{
+            alert("Wrong Date");
+        }
     };
 
     const handleClearClick = () => {
