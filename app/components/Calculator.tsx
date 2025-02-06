@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import { useEffect } from "react";
+
+
 const Calculator: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const [result, setResult] = useState<number | null>(null);
@@ -20,6 +23,22 @@ const Calculator: React.FC = () => {
       setResult(null);
     }
   };
+  
+
+const useInputAnimation = (input: string) => {
+    useEffect(() => {
+        const inputElement = document.querySelector("input");
+        if (inputElement) {
+            inputElement.classList.add("animate-input");
+            const timeout = setTimeout(() => {
+                inputElement.classList.remove("animate-input");
+            }, 300);
+            return () => clearTimeout(timeout);
+        }
+    }, [input]);
+};
+
+export default useInputAnimation;
 
   return (
     // <div>
@@ -183,3 +202,6 @@ const Calculator: React.FC = () => {
 };
 
 export default Calculator;
+
+
+
