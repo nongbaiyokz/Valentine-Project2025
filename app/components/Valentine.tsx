@@ -8,7 +8,31 @@ const Valentine = () => {
         
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
-               
+            <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ 
+                    opacity: 1, 
+                    y: [-50, 20]
+                }}
+                transition={{ 
+                    duration: 1,
+                    y: {
+                        duration: 3,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        ease: "easeInOut"
+                    }
+                }}
+                className="absolute w-full h-full"
+            >
+                <Image
+                    src="/valentine.webp"
+                    width={100}
+                    height={100}
+                    alt="Balloon"
+                    className="absolute right-20 top-1/4"
+                />
+            </motion.div>
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -43,7 +67,7 @@ const Valentine = () => {
                 >
                     
                     <Image
-                        src="/images/valentine.png"
+                        src="/valentine.webp"
                         width={500}
                         height={300}
                         className="max-w-sm rounded-lg shadow-2xl"
