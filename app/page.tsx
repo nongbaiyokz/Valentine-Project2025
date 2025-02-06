@@ -8,8 +8,6 @@ export default function Home() {
    
    <div>
       <Valentine />
-      <Calculator />
-      <Anniversary />
       
 
    </div>
